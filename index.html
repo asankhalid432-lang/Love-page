@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ئازیزەکانم</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #050505, #2a0b1a);
+            font-family: 'Tahoma', sans-serif;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        h1 {
+            color: #ffeb3b;
+            font-size: 28px;
+            z-index: 10;
+            text-shadow: 0 0 20px rgba(255,235,59,0.7);
+            text-align: center;
+        }
+        .center-box {
+            position: absolute;
+            z-index: 10;
+            text-align: center;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #8b0000;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        .floating-name {
+            position: absolute;
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0.85;
+        }
+
+        /* جووڵەکان بۆ لایەنی جیاواز */
+        @keyframes moveRight {
+            0% { left: -150px; }
+            100% { left: 105vw; }
+        }
+        @keyframes moveLeft {
+            0% { right: -150px; }
+            100% { right: 105vw; }
+        }
+        @keyframes moveDown {
+            0% { top: -50px; }
+            100% { top: 105vh; }
+        }
+        @keyframes moveUp {
+            0% { bottom: -50px; }
+            100% { bottom: 105vh; }
+        }
+        @keyframes colorGlow {
+            0% { color: #ff758c; text-shadow: 0 0 10px #ff758c; }
+            50% { color: #ffffff; text-shadow: 0 0 15px #ffffff; }
+            100% { color: #8b0000; text-shadow: 0 0 10px #8b0000; }
+        }
+
+        /* دابەشکردنی ناوەکان بەسەر ئاراستەکاندا */
+        .n1 { top: 10%; animation: moveRight 7s linear infinite, colorGlow 3s infinite; }
+        .n2 { top: 25%; animation: moveLeft 9s linear infinite, colorGlow 3s infinite; }
+        .n3 { top: 40%; animation: moveRight 6s linear infinite, colorGlow 3s infinite; }
+        .n4 { top: 60%; animation: moveLeft 8s linear infinite, colorGlow 3s infinite; }
+        .n5 { top: 75%; animation: moveRight 10s linear infinite, colorGlow 3s infinite; }
+        .n6 { top: 90%; animation: moveLeft 7s linear infinite, colorGlow 3s infinite; }
+
+        .n7 { right: 15%; animation: moveDown 8s linear infinite, colorGlow 3s infinite; }
+        .n8 { left: 20%; animation: moveUp 7s linear infinite, colorGlow 3s infinite; }
+        .n9 { right: 40%; animation: moveDown 6s linear infinite, colorGlow 3s infinite; }
+        .n10 { left: 50%; animation: moveUp 9s linear infinite, colorGlow 3s infinite; }
+    </style>
+</head>
+<body>
+
+    <div class="center-box">
+        <h1>✨ ئازیزەکانم ✨</h1>
+        <button onclick="playMusic()">لێدانی موزیک 🎵</button>
+    </div>
+
+    <!-- ناوەکان کە بە ئاراستەی جیاواز دەجووڵێن -->
+    <div class="floating-name n1">نەنە گیان</div>
+    <div class="floating-name n2">باپیرە گیان</div>
+    <div class="floating-name n3">خاڵە دابان</div>
+    <div class="floating-name n4">پورە ئاڤان</div>
+    <div class="floating-name n5">خاڵە دییار</div>
+    <div class="floating-name n6">دادە لاڤە</div>
+    
+    <div class="floating-name n7">نەنە گیان</div>
+    <div class="floating-name n8">باپیرە گیان</div>
+    <div class="floating-name n9">خاڵە دابان</div>
+    <div class="floating-name n10">دادە لاڤە</div>
+
+    <audio id="myAudio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
